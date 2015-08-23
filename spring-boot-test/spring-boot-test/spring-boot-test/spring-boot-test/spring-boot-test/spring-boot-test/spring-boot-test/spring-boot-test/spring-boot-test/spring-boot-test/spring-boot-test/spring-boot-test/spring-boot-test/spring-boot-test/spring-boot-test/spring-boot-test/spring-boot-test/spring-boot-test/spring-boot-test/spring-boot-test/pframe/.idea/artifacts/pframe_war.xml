@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="pframe:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="pframe.war">
+      <element id="artifact" artifact-name="pframe:war exploded" />
+    </root>
+  </artifact>
+</component>
