@@ -2,7 +2,9 @@ package com.lee.controller;
 
 import com.lee.dao.rest.RestDao;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.util.StringUtils;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,6 +30,10 @@ public class IndexController {
     }
     @RequestMapping("/login")
     public String login(   ){
+        UsernamePasswordToken token=new UsernamePasswordToken();
+        token.setUsername("li");
+        token.setPassword("li".toCharArray());
+        SecurityUtils.getSubject().login(token);
         return "login";
     }
 }
